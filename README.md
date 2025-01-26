@@ -1,7 +1,7 @@
 
 # Creating GCP Infrastructure with Terraform
 
-This project demonstrates the creation of Google Cloud Platform (GCP) infrastructure using Terraform. It specifically sets up a Google Storage Bucket in the `europe-west1` region with the help of a service account for authentication.
+This project demonstrates the creation of Google Cloud Platform (GCP) infrastructure using Terraform. It specifically sets up a Google Storage Bucket and a BigQuery dataset in the `europe-west1` region with the help of a service account for authentication.
 
 ## Prerequisites
 
