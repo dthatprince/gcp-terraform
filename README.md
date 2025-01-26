@@ -28,5 +28,6 @@ You should also have a GCP account and a configured `gcloud` CLI with the approp
    export GOOGLE_APPLICATION_CREDENTIALS="path_to_your_service_account_file.json"
 
 4.  **Set the environment variable for authentication:**
-   
+
    Execute the terraform commands in the "commands.txt" file.
+   
