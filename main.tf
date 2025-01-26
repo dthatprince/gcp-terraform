@@ -8,13 +8,14 @@ terraform {
 }
 
 provider "google" {
-  project     = "placeng"
-  region      = "europe-west1"
+  credentials = file(var.credentials)
+  project     = var.project
+  region      = var.region
 }
 
 resource "google_storage_bucket" "test-bucket" {
-  name          = "placeng-test-bucket-eu"
-  location      = "EU"
+  name          = var.gcs_bucket_name
+  location      = var.location
   force_destroy = true
 
   lifecycle_rule {
@@ -25,4 +26,9 @@ resource "google_storage_bucket" "test-bucket" {
       type = "AbortIncompleteMultipartUpload"
     }
   }
+}
+
+resource "google_bigquery_dataset" "test_dataset" {
+  dataset_id = var.bq_dataset_name
+  location = var.location
 }
