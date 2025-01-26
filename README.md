@@ -43,51 +43,17 @@ To use this project, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone git@github.com:dthatprince/gcp-terraform.git
-   cd gcp-terraform
+   git clone [URL to your Git repository]
+   cd [repository-name]
    ```
 
-2. **Initialize Terraform:**
+2. **Initialize and apply the Terraform configuration:**
 
-   ```bash
-   terraform init
-   ```
-
-   This will download the necessary Terraform provider for Google Cloud.
-
-3. **Execute the Terraform commands:**
-
-   After setting the `GOOGLE_APPLICATION_CREDENTIALS` environment variable, execute the commands listed in the `commands.txt` file to deploy the infrastructure. Ensure you are in the project's root directory.
+   Ensure the `GOOGLE_APPLICATION_CREDENTIALS` environment variable is set, and then execute the commands listed in the `commands.txt` file to deploy the infrastructure. Use the following command to run all operations as defined:
 
    ```bash
    bash commands.txt
    ```
 
-4. **Apply the Terraform configuration:**
-
-   If the `commands.txt` file does not include the apply step, run:
-
-   ```bash
-   terraform init
-   ```
-
-   ```bash
-   terraform plan
-   ```
-
-   ```bash
-   terraform apply
-   ```
-
-   Confirm the action to create the infrastructure on GCP. This step will actually create the Google Storage Bucket as defined in your configuration.
-
-5. **Destroy the infrastructure (optional):**
-
-   If you need to remove the infrastructure created by Terraform, you can use:
-
-   ```bash
-   terraform destroy
-   ```
-
-   This will remove all resources created by this Terraform configuration.
+   This script will initialize Terraform, create a plan, apply it to provision the resources, and can also destroy them if needed.
 
