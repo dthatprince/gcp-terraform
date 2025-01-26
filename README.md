@@ -43,8 +43,8 @@ To use this project, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone [URL to your Git repository]
-   cd [repository-name]
+   git clone https://github.com/dthatprince/gcp-terraform.git
+   cd gcp-terraform
    ```
 
 2. **Initialize and apply the Terraform configuration:**
