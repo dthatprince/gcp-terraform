@@ -6,3 +6,8 @@ terraform init
 
 terraform plan
 
+terraform apply
+
+terraform destroy
+
+unset GOOGLE_APPLICATION_CREDENTIALS
