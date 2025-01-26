@@ -1,0 +1,8 @@
+export GOOGLE_APPLICATION_CREDENTIALS='C:\Users\N\Desktop\DE_ZoomCamp\Week1\TerraForm\terraform-gcp\keys\my-creds.json'
+
+echo $GOOGLE_APPLICATION_CREDENTIALS
+
+terraform init
+
+terraform plan
+
