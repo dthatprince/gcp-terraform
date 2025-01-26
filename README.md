@@ -1,3 +1,4 @@
+
 # Creating GCP Infrastructure with Terraform
 
 This project demonstrates the creation of Google Cloud Platform (GCP) infrastructure using Terraform. It specifically sets up a Google Storage Bucket in the `europe-west1` region with the help of a service account for authentication.
@@ -26,8 +27,67 @@ You should also have a GCP account and a configured `gcloud` CLI with the approp
 
    ```bash
    export GOOGLE_APPLICATION_CREDENTIALS="path_to_your_service_account_file.json"
+   ```
 
-4.  **Set the environment variable for authentication:**
+## Terraform Configuration
 
-   Execute the terraform commands in the "commands.txt" file.
-   
+The Terraform configuration includes the required providers and declares a single resource: a Google Cloud Storage bucket. Here's a brief overview of the configuration:
+
+- **Provider:** Google Cloud (specified version 6.17.0), authenticated via the service account.
+- **Resource:** Google Storage Bucket named `placeng-test-bucket-eu` in the `EU` location with a lifecycle rule that aborts incomplete multipart uploads that are older than 1 day.
+
+## Usage
+
+To use this project, follow these steps:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone [URL to your Git repository]
+   cd [repository-name]
+   ```
+
+2. **Initialize Terraform:**
+
+   ```bash
+   terraform init
+   ```
+
+   This will download the necessary Terraform provider for Google Cloud.
+
+3. **Execute the Terraform commands:**
+
+   After setting the `GOOGLE_APPLICATION_CREDENTIALS` environment variable, execute the commands listed in the `commands.txt` file to deploy the infrastructure. Ensure you are in the project's root directory.
+
+   ```bash
+   bash commands.txt
+   ```
+
+4. **Apply the Terraform configuration:**
+
+   If the `commands.txt` file does not include the apply step, run:
+
+   ```bash
+   terraform init
+   ```
+
+   ```bash
+   terraform plan
+   ```
+
+   ```bash
+   terraform apply
+   ```
+
+   Confirm the action to create the infrastructure on GCP. This step will actually create the Google Storage Bucket as defined in your configuration.
+
+5. **Destroy the infrastructure (optional):**
+
+   If you need to remove the infrastructure created by Terraform, you can use:
+
+   ```bash
+   terraform destroy
+   ```
+
+   This will remove all resources created by this Terraform configuration.
+
